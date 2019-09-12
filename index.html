@@ -28,19 +28,19 @@
 
     <!-- Home screen icons -->
     <link rel="shortcut icon" href="./favicon.ico" />
-    <meta itemprop="image" content="/images/logo/io-512.png" />
-    <meta name="msapplication-TileImage" content="/images/logo/io-144-precomposed.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/logo/io-144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/images/logo/io-152.png">
+    <meta itemprop="image" content="./images/logo/io-512.png" />
+    <meta name="msapplication-TileImage" content="./images/logo/io-144-precomposed.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="./images/logo/io-144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./images/logo/io-152.png">
 
     <!-- Other icons -->
-    <link rel="icon" type="image/png" href="/images/logo/io-512.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/images/logo/io-192.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/images/logo/io-96.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/logo/io-32-alt.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/logo/io-16.png" />
-    <link rel="apple-touch-icon" href="/images/logo/io-152.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/logo/io-72.png">
+    <link rel="icon" type="image/png" href="./images/logo/io-512.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./images/logo/io-192.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="./images/logo/io-96.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/logo/io-32-alt.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/logo/io-16.png" />
+    <link rel="apple-touch-icon" href="./images/logo/io-152.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="./images/logo/io-72.png">
 
     <!-- Social sharing data -->
     <meta name="twitter:card" content="summary" />
@@ -58,7 +58,7 @@
 
     <!-- <link lazyload href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap|Roboto+Mono&display=swap" rel="stylesheet"> -->
 
-    <link lazyload href="/lib/highlight.a11y-light.css" rel="stylesheet">
+    <link lazyload href="./lib/highlight.a11y-light.css" rel="stylesheet">
     <script src="./lib/detect.js"></script>
     <script src="./lib/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
@@ -106,12 +106,12 @@
       .docs > io-sidebar:not([collapsed]) {
         flex-basis: 11em !important;
       }
-      iframe[name=todo] {
+      io-main-page iframe {
         border: none;
         flex: 1 1;
       }
     </style>
-    <link href="/lib/mocha.css" rel="stylesheet" />
+    <link href="./io/lib/mocha.css" rel="stylesheet" />
     <script type="module">
 
     import {IoSelectorTabs, IoStorageFactory as $} from "./io/dist/io-core.js";
@@ -235,15 +235,15 @@
               ]},
             ],
             elements: [
-              ['io-md-view', {name: 'getting-started', path :'./io/docs/getting-started.md'}],
-              ['io-md-view', {name: 'learn-more', path :'./io/docs/learn-more.md'}],
-              ['io-md-view', {name: 'core', path :'./io/docs/core.md'}],
-              ['io-md-view', {name: 'menus', path :'./io/docs/menus.md'}],
-              ['io-md-view', {name: 'object', path :'./io/docs/object.md'}],
-              ['io-md-view', {name: 'math', path :'./io/docs/math.md'}],
-              ['io-md-view', {name: 'color', path :'./io/docs/color.md'}],
-              ['io-md-view', {name: 'layout', path :'./io/docs/layout.md'}],
-              ['io-md-view', {name: 'extras', path :'./io/docs/extras.md'}],
+              ['io-md-view', {name: 'getting-started', path :'./docs/getting-started.md'}],
+              ['io-md-view', {name: 'learn-more', path :'./docs/learn-more.md'}],
+              ['io-md-view', {name: 'core', path :'./docs/core.md'}],
+              ['io-md-view', {name: 'menus', path :'./docs/menus.md'}],
+              ['io-md-view', {name: 'object', path :'./docs/object.md'}],
+              ['io-md-view', {name: 'math', path :'./docs/math.md'}],
+              ['io-md-view', {name: 'color', path :'./docs/color.md'}],
+              ['io-md-view', {name: 'layout', path :'./docs/layout.md'}],
+              ['io-md-view', {name: 'extras', path :'./docs/extras.md'}],
             ],
           }],
           ['io-selector-tabs', {name: 'demo', selected:  $({value: 'elements', storage: 'hash', key: 'demo'}),
@@ -254,13 +254,13 @@
               {value: 'todo', label: "Todo App"},
             ],
             elements: [
-              ['io-demo-core', {name: 'elements', import: './io/demo/elements.js'}],
-              ['io-demo-theme', {name: 'theme', import: './io/demo/theme.js'}],
-              ['io-demo-three', {name: 'three', import: './io/demo/three.js'}],
-              ['iframe', {name: 'todo', title: 'TODO MVC', src: './io/demo/todomvc/index.html'}],
+              ['io-demo-core', {name: 'elements', import: './demo/elements.js'}],
+              ['io-demo-theme', {name: 'theme', import: './demo/theme.js'}],
+              ['io-demo-three', {name: 'three', import: './demo/three.js'}],
+              ['iframe', {name: 'todo', title: 'TODO MVC', src: './demo/todomvc/index.html'}],
             ],
           }],
-          ['io-test', {name: 'test', import: "./io/dist/io-tests.js"}],
+          ['iframe', {name: 'test', title: 'Test', src: './io/test.html'}],
         ];
       }
     }
