@@ -1,5 +1,5 @@
-import {IoElement} from "../../../io/dist/io.js";
-import {IoStorageFactory as $} from "../../../io/dist/io-core.js";
+import {IoElement} from "../../../io/build/io.js";
+import {IoStorageFactory as $} from "../../../io/build/io-core.js";
 import {TodoModel} from "./todo-model.js";
 import "./todo-new-item.js";
 import "./todo-list.js";

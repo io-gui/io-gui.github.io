@@ -1,4 +1,4 @@
-import {IoElement} from "../../io/dist/io.js";
+import {IoElement} from "../../io/build/io.js";
 import {
 	PerspectiveCamera,
 	WebGLRenderer,

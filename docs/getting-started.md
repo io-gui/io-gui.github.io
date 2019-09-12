@@ -14,16 +14,16 @@ Io design system includes a [collection of UI elements](#doc=elements-core#ioite
 
 ## Usage
 
-Import Io core module from `dist/io.js` or `src/io.js`.
+Import Io core module from `build/io.js` or `src/io.js`.
 
 ```javascript
-import {IoElement} from "./io/dist/io.js";
+import {IoElement} from "./io/build/io.js";
 ```
 
 To use one of the elements, such as `<io-menu-options>` for example, import the corresponding element collection, create the element, assign the options property, and add it to your DOM.
 
 ```javascript
-import "./io/dist/io-menus.js";
+import "./io/build/io-menus.js";
 const menu = document.createElement('io-option-menu');
 menu.options = ["one", "two", "three"];
 element.appendChild(menu);

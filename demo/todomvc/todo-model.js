@@ -1,4 +1,4 @@
-import {IoNode} from "../../../io/dist/io.js";
+import {IoNode} from "../../../io/build/io.js";
 
 export class TodoModel extends IoNode {
 	static get Properties() {
