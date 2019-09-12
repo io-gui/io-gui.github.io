@@ -102,21 +102,31 @@ export class IoDemoThree extends IoElement {
 
 		const orbit = new OrbitControls( camera, renderer.domElement );
 		orbit.update();
-		orbit.addEventListener( 'change', this.render );
+		orbit.addEventListener( 'change', () => {
+			const selected = this.$.inspector.selected;
+			this.dispatchEvent('object-mutated', {object: selected}, false, window);
+			this.render();
+		} );
 
 		const control = new TransformControls( camera, renderer.domElement );
-		control.addEventListener( 'change', this.render );
+		control.addEventListener( 'change', () => {
+			const selected = this.$.inspector.selected;
+			this.dispatchEvent('object-mutated', {object: selected}, false, window);
+			this.render();
+		} );
 
-		control.addEventListener( 'dragging-changed', function ( event ) {
+		control.addEventListener( 'dragging-changed', ( event ) => {
 			orbit.enabled = ! event.value;
 		} );
 
 		control.attach( mesh );
 		scene.add( control );
 
-		this.$.inspector.addEventListener( 'change', this.render );
+		this.$.inspector.addEventListener( 'change', () => {
+			this.render();
+		} );
 
-		this.$.inspector.value = scene.children[3].material;
+		this.$.inspector.value = scene.children;
 		// window.object = this.$.inspector.value; // DEBUG
 	}
 }
