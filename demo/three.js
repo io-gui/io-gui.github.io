@@ -117,7 +117,7 @@ export class IoDemoThree extends IoElement {
 		this.$.inspector.addEventListener( 'change', this.render );
 
 		this.$.inspector.value = scene.children[3].material;
-		window.object = this.$.inspector.value; // DEBUG
+		// window.object = this.$.inspector.value; // DEBUG
 	}
 }
 

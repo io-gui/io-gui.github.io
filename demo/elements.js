@@ -1,5 +1,6 @@
 import {IoElement} from "../../io/build/io.js";
 import {IoStorageFactory as $} from "../../io/build/io-core.js";
+import "./element-demo.js";
 
 const boolean = $({key: 'demo:boolean', value: false});
 const string = $({key: 'demo:string', value: 'Hello io!'});
