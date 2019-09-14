@@ -6,6 +6,7 @@ import {
 	Vector3,
 	HemisphereLight
 } from "../../../three.js/build/three.module.js";
+import {Selection} from "../../../three-ui/build/three-ui.js";
 import {GLTFLoader} from "../../../three.js/examples/jsm/loaders/GLTFLoader.js";
 
 export class IoDemoThree extends IoElement {
@@ -31,6 +32,10 @@ export class IoDemoThree extends IoElement {
 	static get Properties() {
 		return {
 			scene: Scene,
+			selection: {
+				type: Selection,
+				observe: true,
+			},
 			camera: PerspectiveCamera,
 		};
 	}
@@ -40,8 +45,8 @@ export class IoDemoThree extends IoElement {
 	constructor(props) {
 		super(props);
 		this.template([
-			['three-viewport', {scene: this.scene, camera: this.camera, id: 'viewport'}],
-			['three-inspector', {id: 'inspector', value: this}],
+			['three-viewport', {scene: this.scene, camera: this.camera, selection: this.selection, id: 'viewport'}],
+			['three-inspector', {id: 'inspector', value: this.scene}],
 		]);
 
 		const scene = this.scene;
@@ -52,16 +57,6 @@ export class IoDemoThree extends IoElement {
 		camera._target = new Vector3(0, 1, 0);
 		camera.lookAt( camera._target );
 		scene.add( camera );
-
-		// const orbit = new OrbitControls( camera, this.$.renderer );
-		// orbit.update();
-		// orbit.addEventListener( 'change', () => {
-		// 	this.dispatchEvent('object-mutated', {object: camera}, false, window);
-		// 	this.dispatchEvent('object-mutated', {object: camera.position}, false, window);
-		// 	this.dispatchEvent('object-mutated', {object: camera.rotation}, false, window);
-		// 	this.dispatchEvent('object-mutated', {object: camera.quaternion}, false, window);
-		// 	this.onChange();
-		// } );
 
 		const loader = new GLTFLoader();
 
@@ -78,7 +73,9 @@ export class IoDemoThree extends IoElement {
 			this.onChange();
 		} );
 
-		this.$.inspector.value = scene.children;
+	}
+	selectionMutated() {
+		this.$.inspector.value = this.$.viewport.selection.selected[0] || this.scene;
 	}
 }
 
