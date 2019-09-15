@@ -14,7 +14,10 @@ export class TodoNewItem extends IoElement {
 	}
 	static get Properties() {
 		return {
-			model: TodoModel,
+			model: {
+				type: TodoModel,
+				observe: true,
+			},
 		};
 	}
 	onInputKey(event) {

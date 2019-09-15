@@ -5,7 +5,10 @@ import "./todo-item.js";
 export class TodoList extends IoElement {
 	static get Properties() {
 		return {
-			model: TodoModel,
+			model: {
+				type: TodoModel,
+				observe: true,
+			},
 			route: 'all',
 		};
 	}
@@ -17,8 +20,8 @@ export class TodoList extends IoElement {
 
 		this.template([
 			['section', {class: 'main'}, [
-				['input', {type: 'checkbox', id: 'toggle-all', class: 'toggle-all', checked: allCompleted, 'on-click': this.model._toggleItemsCompleted}],
-				this.model.items.length ? ['label', {for: 'toggle-all'}, 'Mark all as complete'] : null,
+				['input', {type: 'checkbox', id: 'toggle-all', class: 'toggle-all', checked: allCompleted}],
+				this.model.items.length ? ['label', {for: 'toggle-all', 'on-click': this.model.toggleAll}, 'Mark all as complete'] : null,
 				['ul', {class: 'todo-list'}, [
 					itemsInRoute.map((item) => ['todo-item', {item: item, model: this.model}])
 				]]

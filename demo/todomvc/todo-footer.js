@@ -11,7 +11,10 @@ export class TodoFooter extends IoElement {
 	}
 	static get Properties() {
 		return {
-			model: TodoModel,
+			model: {
+				type: TodoModel,
+				observe: true,
+			},
 			route: 'all',
 		};
 	}

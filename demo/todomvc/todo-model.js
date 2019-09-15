@@ -22,6 +22,7 @@ export class TodoModel extends IoNode {
 	constructor() {
 		super();
 		const items = JSON.parse(localStorage.getItem('todoapp'));
+		this.toggleAll = this.toggleAll.bind(this);
 		if (items) this.items = items;
 	}
 	newItem(title) {
@@ -63,7 +64,7 @@ export class TodoModel extends IoNode {
 		this.dispatchEvent('object-mutated', {object: this}, false, window);
 		this.save();
 	}
-	_toggleItemsCompleted() {
+	toggleAll() {
 		let completed = !(this.items.length === this.getCompletedCount());
 		for (let i = this.items.length; i--;) {
 			this.items[i].completed = completed;

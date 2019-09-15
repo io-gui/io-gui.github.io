@@ -9,7 +9,10 @@ import "./todo-info.js";
 export class TodoApp extends IoElement {
 	static get Properties() {
 		return {
-			model: TodoModel,
+			model: {
+				type: TodoModel,
+				observe: true,
+			},
 			route: $({value: 'all', storage: 'hash', key: 'route'}),
 		};
 	}

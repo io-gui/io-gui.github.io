@@ -1,4 +1,5 @@
 import {IoElement} from "../../../io/build/io.js";
+import {TodoModel} from "./todo-model.js";
 
 const ENTER_KEY = 13;
 const ESCAPE_KEY = 27;
@@ -14,7 +15,10 @@ export class TodoItem extends IoElement {
 	static get Properties() {
 		return {
 			item: Object,
-			model: Object,
+			model: {
+				type: TodoModel,
+				observe: true,
+			},
 			editing: false
 		};
 	}
