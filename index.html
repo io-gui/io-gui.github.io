@@ -56,7 +56,7 @@
 		<meta property="og:image" content="https://io-gui.dev/images/logo/io-512.png?001" />
 		<meta property="og:locale" content="en_US" />
 
-		<!-- <link lazyload href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap|Roboto+Mono&display=swap" rel="stylesheet"> -->
+		<link lazyload href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap|Roboto+Mono&display=swap" rel="stylesheet">
 
 		<link lazyload href="./lib/highlight.a11y-light.css" rel="stylesheet">
 		<script src="./lib/detect.js"></script>
@@ -114,7 +114,7 @@
 		<link href="./io/lib/mocha.css" rel="stylesheet" />
 		<script type="module">
 
-		import {IoSelectorTabs, IoStorageFactory as $} from "./io/build/io-core.js";
+		import {IoSelectorTabs, IoThemeSingleton, IoStorageFactory as $} from "./io/build/io-core.js";
 		import "./io/build/io-extras.js";
 		import "./three-ui/build/three-ui.js";
 		import "./demo/element-demo.js";
@@ -250,7 +250,11 @@
 					['io-selector-tabs', {name: 'demo', selected:	$({value: 'elements', storage: 'hash', key: 'demo'}),
 						options: [
 							{value: 'elements', label: "Elements"},
-							{value: 'theme', label: "Theme"},
+							{label: "Theme", options: [
+								{label: 'Light', value: 'light', selectable: false, action: this.setTheme},
+								{label: 'Dark', value: 'dark', selectable: false, action: this.setTheme},
+								{value: 'theme', label: 'Customize'},
+							]},
 							{value: 'three', label: "Three.js"},
 							{value: 'todo', label: "Todo App"},
 						],
@@ -263,6 +267,9 @@
 					}],
 					['iframe', {name: 'test', title: 'Test', src: './io/test.html'}],
 				];
+			}
+			setTheme(event) {
+				IoThemeSingleton.theme = event;
 			}
 		}
 		IoMainPage.Register();

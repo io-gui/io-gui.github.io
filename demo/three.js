@@ -46,7 +46,12 @@ export class IoDemoThree extends IoElement {
 		super(props);
 		this.template([
 			['three-viewport', {scene: this.scene, camera: this.camera, selection: this.selection, id: 'viewport'}],
-			['three-inspector', {id: 'inspector', value: this.scene}],
+			['three-inspector', {id: 'inspector', value: this.camera}],
+			['io-context-menu', {button: 2, options: [
+				{label: 'Camera', action: () => { this.$.inspector.value = this.$.viewport.camera; }},
+				{label: 'Scene', action: () => { this.$.inspector.value = this.$.viewport.scene; }},
+				{label: 'Renderer', action: () => { this.$.inspector.value = this.$.viewport.renderer; }},
+			]}],
 		]);
 
 		const scene = this.scene;
