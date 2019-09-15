@@ -63,7 +63,7 @@ export class IoDemoThree extends IoElement {
 		loader.load('/demo/scene/cubes.gltf', gltf => {
 			gltf.scene.children.forEach(child => { scene.add( child ); });
 			scene.add(new HemisphereLight(0x333333, 0xffffff, 3));
-			window.dispatchEvent(new CustomEvent('object-mutated', {detail: {object: scene.children}}));
+			window.dispatchEvent(new CustomEvent('object-mutated', {detail: {objects: [scene, scene.children]}}));
 		}, undefined, function ( e ) {
 			console.error( e );
 		} );
