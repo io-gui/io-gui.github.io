@@ -120,17 +120,17 @@ export class IoDemoCore extends IoElement {
 			['div', {class: 'io-column'}, [
 				['io-menu-options', {value: menuValue, options: menuoptions, horizontal: true, selectable: true}],
 				['div', {class: 'io-row'}, [
-					['io-menu-options', {value: menuValue, options: menuoptions, searchable: true}],
+					['io-menu-options', {value: menuValue, selectable: true, options: menuoptions, searchable: true}],
 					['div', {class: 'io-column'}, [
 						['div', [['span', {class: 'io-item'}, 'Selected:'], ['io-item', {value: menuValue}]]],
-						['io-menu-item', {label: 'menu item', value: menuValue, option: $('demo:menuoption')}],
+						['io-menu-item', {label: 'menu item', value: menuValue, selectable: true, option: $('demo:menuoption')}],
 						['div', {class: 'io-content'}, [
 							['span', 'click for menu'],
-							['io-context-menu', {value: menuValue, options: menuoptions, position: 'pointer', button: 0}],
+							['io-context-menu', {value: menuValue, selectable: true, options: menuoptions, position: 'pointer', button: 0}],
 						]],
 						['div', {class: 'io-content'}, [
 							['span', 'right-click for menu'],
-							['io-context-menu', {value: menuValue, options: menuoptions, position: 'pointer', button: 2}],
+							['io-context-menu', {value: menuValue, selectable: true, options: menuoptions, position: 'pointer', button: 2}],
 						]],
 					]],
 				]],
