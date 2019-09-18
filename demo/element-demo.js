@@ -65,6 +65,7 @@ $({key: 'demo:object', value: {
 	matrix3: [1, 1, 1, 1, 1, 1, 1, 1, 1],
 	matrix4: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 }});
+$({key: 'demo:vector2', value: [0, 1]});
 
 export class IoElementDemo extends IoElement {
 	static get Style() {

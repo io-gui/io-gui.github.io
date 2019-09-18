@@ -103,6 +103,24 @@ Input element for `Number` data type combining `IoNumber` and `IoSlider`
 <io-element-demo element="io-number-slider" properties='{"value": "demo:number", "step": 0.2617993877991494, "conversion": 57.29577951308232, "min": -6.283185307179586, "max": 6.283185307179586}'></io-element-demo>
 <io-element-demo element="io-number-slider" properties='{"value": "demo:number", "step": 0.1, "conversion": 0.2, "min": -0.5, "max": 0.5}'></io-element-demo>
 
+## `IoSliderRange`
+
+Extends `IoSlider`.
+
+Input element for `Array(2)` data type displayed as slider.
+It can be configured to clamp the `value` compoents to `min` / `max` and round it to the nearest `step` increment.
+Keys left/right/up/down+shift and pageup/pagedown change the value in step incements. Home/end keys set the value to min/max.
+
+<io-element-demo element="io-slider-range" properties='{"value": "demo:vector2", "step": 0.1, "min": -1, "max": 2}'></io-element-demo>
+
+## `IoNumberSliderRange`
+
+Extends `IoNumberSlider`. Implements `IoNumber` and `IoSliderRange`.
+
+Input element for `Array(2)` data type combining `IoNumber` and `IoSliderRange`
+
+<io-element-demo element="io-number-slider-range" properties='{"value": "demo:vector2", "step": 0.05, "min": -1, "max": 2}'></io-element-demo>
+
 ## `IoIcon`
 
 Extends `IoElement`.
