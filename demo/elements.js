@@ -5,7 +5,6 @@ import "./element-demo.js";
 const boolean = $({key: 'demo:boolean', value: false});
 const string = $({key: 'demo:string', value: 'Hello io!'});
 const number = $({key: 'demo:number', value: 0});
-const vector2 = $({key: 'demo:vector2', value: [0,1]});
 
 const menuoptions = [
 	{label: 'Long Menu', options: $('demo:longmenuoptions').value},
@@ -96,14 +95,14 @@ export class IoDemoCore extends IoElement {
 			['io-item', {label: 'io-slider'}],
 			['div', {class: 'io-row'}, [
 				['io-slider', {value: number, horizontal: false, min: 0, max: 2, step: 0.25}],
-				['io-slider-range', {value: vector2, horizontal: false, min: 0, max: 2, step: 0.25}],
+				['io-slider-range', {value: $('demo:vector2'), horizontal: false, min: -1, max: 2, step: 0.25}],
 				['div', {class: 'io-column'}, [
 					['io-slider', {value: number, min: -2, max: 2, step: 0.1, exponent: 3}],
 					['io-slider', {value: number, min: 0, max: 2, step: 1}],
 					['io-slider', {value: number, min: -1.33, max: 3.5, step: 0.8}],
 					['io-number-slider', {value: number, min: -0.25, max: 0.25, step: 0.01, exponent: 0.25}],
-					['io-slider-range', {value: vector2, min: -10, max: 10, step: 1, exponent: 0.5}],
-					['io-number-slider-range', {value: vector2, min: -10, max: 10, step: 1}],
+					['io-slider-range', {value: $('demo:vector2'), min: -10, max: 10, step: 1, exponent: 0.5}],
+					['io-number-slider-range', {value: $('demo:vector2'), min: -10, max: 10, step: 1}],
 				]],
 			]],
 			['io-item', {label: 'io-option-menu'}],
@@ -124,21 +123,21 @@ export class IoDemoCore extends IoElement {
 			['io-item', {label: 'io-menu'}],
 			['div', {class: 'io-column'}, [
 				['io-menu-options', {value: menuValue, options: menuoptions, horizontal: true, selectable: true}],
-				// ['div', {class: 'io-row'}, [
-				// 	['io-menu-options', {value: menuValue, selectable: true, options: menuoptions, searchable: true}],
-				// 	['div', {class: 'io-column'}, [
-				// 		['div', [['span', {class: 'io-item'}, 'Selected:'], ['io-item', {value: menuValue}]]],
-				// 		['io-menu-item', {label: 'menu item', value: menuValue, selectable: true, option: $('demo:menuoption')}],
-				// 		['div', {class: 'io-content'}, [
-				// 			['span', 'click for menu'],
-				// 			['io-context-menu', {value: menuValue, selectable: true, options: menuoptions, position: 'pointer', button: 0}],
-				// 		]],
-				// 		['div', {class: 'io-content'}, [
-				// 			['span', 'right-click for menu'],
-				// 			['io-context-menu', {value: menuValue, selectable: true, options: menuoptions, position: 'pointer', button: 2}],
-				// 		]],
-				// 	]],
-				// ]],
+				['div', {class: 'io-row'}, [
+					['io-menu-options', {value: menuValue, selectable: true, options: menuoptions, searchable: true}],
+					['div', {class: 'io-column'}, [
+						['div', [['span', {class: 'io-item'}, 'Selected:'], ['io-item', {value: menuValue}]]],
+						['io-menu-item', {label: 'menu item', value: menuValue, selectable: true, option: $('demo:menuoption')}],
+						['div', {class: 'io-content'}, [
+							['span', 'click for menu'],
+							['io-context-menu', {value: menuValue, selectable: true, options: menuoptions, position: 'pointer', button: 0}],
+						]],
+						['div', {class: 'io-content'}, [
+							['span', 'right-click for menu'],
+							['io-context-menu', {value: menuValue, selectable: true, options: menuoptions, position: 'pointer', button: 2}],
+						]],
+					]],
+				]],
 			]],
 			['io-item', {label: 'io-properties (filtered)'}],
 			['div', {class: 'io-column'}, [
@@ -164,6 +163,7 @@ export class IoDemoCore extends IoElement {
 						'matrix2': ['io-matrix'],
 						'matrix3': ['io-matrix'],
 						'matrix4': ['io-matrix'],
+					  'number': ['io-slider', {step: 0.1}],
 					},
 				}],
 			]],

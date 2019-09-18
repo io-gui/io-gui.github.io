@@ -9,7 +9,7 @@ It displays `option.icon`, `option.label` and `option.hint` property and it crea
   "option": "demo:menuoption",
   "expanded": false,
   "direction": "right",
-  "selectable": false
+  "selectable": true
 }' config='{
   "direction": ["io-option-menu", {"options": ["top", "right", "bottom", "left"]}], "type:object": ["io-object"]
 }'></io-element-demo>

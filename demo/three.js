@@ -1,4 +1,5 @@
 import {IoElement} from "../../io/build/io.js";
+import {IoContextMenu} from "../../io/build/io-core.js";
 import {
 	PerspectiveCamera,
 	Scene,
@@ -47,12 +48,17 @@ export class IoDemoThree extends IoElement {
 		this.template([
 			['three-viewport', {scene: this.scene, camera: this.camera, selection: this.selection, id: 'viewport'}],
 			['three-inspector', {id: 'inspector', value: this.camera}],
-			['io-context-menu', {button: 2, options: [
+		]);
+
+		const contextMenu = new IoContextMenu({
+			button: 2,
+			options: [
 				{label: 'Camera', action: () => { this.$.inspector.value = this.$.viewport.camera; }},
 				{label: 'Scene', action: () => { this.$.inspector.value = this.$.viewport.scene; }},
 				{label: 'Renderer', action: () => { this.$.inspector.value = this.$.viewport.renderer; }},
-			]}],
-		]);
+			]
+		});
+		this.$.viewport.appendChild(contextMenu);
 
 		const scene = this.scene;
 		scene.add( new GridHelper( 10, 10 ) );
