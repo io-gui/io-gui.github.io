@@ -26,7 +26,7 @@ export class IoDemoThree extends IoElement {
 		:host > three-inspector {
 			flex: 0 1 18em;
 			max-width: 50%;
-			overflow-y: auto;
+			overflow-y: scroll;
 		}
 		`;
 	}
