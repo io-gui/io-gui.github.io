@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "/Users/akiro/Projects/io"
+		},
+		{
+			"path": "/Users/akiro/Projects/three-ui"
+		},
+		{
+			"path": "/Users/akiro/Projects/three.js"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "io-gui.github.io",
+		"liveServer.settings.mount": [
+			["/io", "../io"], ["../io", "../io"],
+			["/three-ui", "../three-ui"], ["../three-ui", "../three-ui"],
+			["/three.js", "../three.js"], ["../three.js", "../three.js"]
+		]
+	}
+}
