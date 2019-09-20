@@ -144,7 +144,12 @@ export class IoDemoCore extends IoElement {
 				['io-properties', {value: objectBinding, properties: ['number', 'string', 'boolean']}],
 			]],
 			['io-item', {label: 'io-object (filtered)'}],
-			['io-object', {value: objectBinding, expanded: true, properties: ['number', 'string', 'boolean']}],
+			['io-object', {
+				value: objectBinding,
+				expanded: true,
+				slotted: ['io-item', {label: 'Slotted Element'}],
+				properties: ['number', 'string', 'boolean']
+			}],
 			['io-item', {label: 'io-object (configured)'}],
 			['io-object', {value: objectBinding, expanded: true, properties: ['number'], config: {'number': ['io-slider', {step: 0.1}]}}],
 			['io-item', {label: 'io-inspector'}],
