@@ -47,7 +47,7 @@ export class IoDemoThree extends IoElement {
 		super(props);
 		this.template([
 			['three-viewport', {scene: this.scene, camera: this.camera, selection: this.selection, id: 'viewport'}],
-			['three-inspector', {id: 'inspector', value: this.camera}],
+			['three-inspector', {id: 'inspector', value: this.scene}],
 		]);
 
 		const contextMenu = new IoContextMenu({

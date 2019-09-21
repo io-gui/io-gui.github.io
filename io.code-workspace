@@ -4,13 +4,13 @@
 			"path": "."
 		},
 		{
-			"path": "/Users/akiro/Projects/io"
+			"path": "../io"
 		},
 		{
-			"path": "/Users/akiro/Projects/three-ui"
+			"path": "../three-ui"
 		},
 		{
-			"path": "/Users/akiro/Projects/three.js"
+			"path": "../three.js"
 		}
 	],
 	"settings": {
