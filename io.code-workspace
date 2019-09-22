@@ -9,9 +9,9 @@
 		{
 			"path": "../three-ui"
 		},
-		{
-			"path": "../three.js"
-		}
+		// {
+		// 	"path": "../three.js"
+		// }
 	],
 	"settings": {
 		"liveServer.settings.multiRootWorkspaceName": "io-gui.github.io",
@@ -19,6 +19,18 @@
 			["/io", "../io"], ["../io", "../io"],
 			["/three-ui", "../three-ui"], ["../three-ui", "../three-ui"],
 			["/three.js", "../three.js"], ["../three.js", "../three.js"]
-		]
+		],
+		"files.exclude": {
+			".*": true,
+			"node_modules": true,
+			"package*.json": true,
+			"manifest.json": true,
+			"rollup*.js": true,
+			"README.md": true,
+			"LICENSE": true,
+			"CNAME": true,
+			"robots.txt": true,
+			"favicon.ico": true,
+		}
 	}
 }
