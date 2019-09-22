@@ -24,7 +24,7 @@ export class IoDemoThree extends IoElement {
 			flex: 1 0;
 		}
 		:host > three-inspector {
-			flex: 0 1 18em;
+			flex: 0 1 22em;
 			max-width: 50%;
 			overflow-y: scroll;
 		}
@@ -47,7 +47,7 @@ export class IoDemoThree extends IoElement {
 		super(props);
 		this.template([
 			['three-viewport', {scene: this.scene, camera: this.camera, selection: this.selection, id: 'viewport'}],
-			['three-inspector', {id: 'inspector', value: this.scene}],
+			['three-inspector', {id: 'inspector', value: this.camera}],
 		]);
 
 		const contextMenu = new IoContextMenu({
@@ -75,6 +75,7 @@ export class IoDemoThree extends IoElement {
 			gltf.scene.children.forEach(child => { scene.add( child ); });
 			scene.add(new HemisphereLight(0x333333, 0xffffff, 3));
 			window.dispatchEvent(new CustomEvent('object-mutated', {detail: {objects: [scene, scene.children]}}));
+			// this.$.inspector.value = this.scene.children[0];
 		}, undefined, function ( e ) {
 			console.error( e );
 		} );
