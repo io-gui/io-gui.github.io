@@ -31,6 +31,9 @@
 			"CNAME": true,
 			"robots.txt": true,
 			"favicon.ico": true,
+			"images/": true,
+			"build/": true,
+			"lib/": true,
 		}
 	}
 }
