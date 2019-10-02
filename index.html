@@ -260,7 +260,8 @@
 							{label: "Theme", options: [
 								{label: 'Light', value: 'light', selectable: false, action: this.setTheme},
 								{label: 'Dark', value: 'dark', selectable: false, action: this.setTheme},
-								{value: 'theme', label: 'Customize'},
+								{label: 'Customize', value: 'theme'},
+								{label: 'Reset', selectable: false, action: this.resetTheme},
 							]},
 							{value: 'three', label: "Three.js"},
 							{value: 'todo', label: "Todo App"},
@@ -277,6 +278,9 @@
 			}
 			setTheme(event) {
 				IoThemeSingleton.theme = event;
+			}
+			resetTheme() {
+				IoThemeSingleton.reset();
 			}
 		}
 		IoMainPage.Register();
