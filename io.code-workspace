@@ -22,18 +22,16 @@
 		],
 		"files.exclude": {
 			".*": true,
-			"node_modules": true,
-			"package*.json": true,
-			"manifest.json": true,
-			"rollup*.js": true,
-			"README.md": true,
-			"LICENSE": true,
 			"CNAME": true,
-			"robots.txt": true,
 			"favicon.ico": true,
 			"images/": true,
-			"build/": true,
 			"lib/": true,
+			"LICENSE": true,
+			"manifest.json": true,
+			"node_modules": true,
+			"README.md": true,
+			"robots.txt": true,
+			"rollup*.js": true
 		}
 	}
 }
