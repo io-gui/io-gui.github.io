@@ -263,9 +263,9 @@
 							{value: 'elements', label: "Elements"},
 							{label: "Theme", options: [
 								{label: 'Customize', value: 'theme'},
-								{label: 'Set Light', value: 'light', selectable: false, action: this.setTheme},
-								{label: 'Set Dark', value: 'dark', selectable: false, action: this.setTheme},
-								{label: 'Reset', selectable: false, action: this.resetTheme},
+								{label: 'Set Light', selectable: false, action: () => IoThemeSingleton.theme = "light" },
+								{label: 'Set Dark', selectable: false, action: () => IoThemeSingleton.theme = "dark" },
+								{label: 'Reset', selectable: false, action: () => IoThemeSingleton.reset() },
 							]},
 							{value: 'three', label: "Three.js"},
 							{value: 'todo', label: "Todo App"},
@@ -279,12 +279,6 @@
 					}],
 					['iframe', {name: 'test', title: 'Test', src: './io/test.html'}],
 				];
-			}
-			setTheme(event) {
-				IoThemeSingleton.theme = event;
-			}
-			resetTheme() {
-				IoThemeSingleton.reset();
 			}
 		}
 		IoMainPage.Register();
