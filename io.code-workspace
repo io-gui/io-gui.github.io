@@ -9,9 +9,9 @@
 		{
 			"path": "../three-ui"
 		},
-		// {
-		// 	"path": "../three.js"
-		// }
+		{
+			"path": "../three.js"
+		}
 	],
 	"settings": {
 		"liveServer.settings.multiRootWorkspaceName": "io-gui.github.io",
