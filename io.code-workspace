@@ -26,10 +26,7 @@
 			"favicon.ico": true,
 			"images/": true,
 			"lib/": true,
-			"LICENSE": true,
-			"manifest.json": true,
 			"node_modules": true,
-			"README.md": true,
 			"robots.txt": true,
 			"rollup*.js": true
 		}

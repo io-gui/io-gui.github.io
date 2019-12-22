@@ -1,16 +1,16 @@
 ## About Io
 
-Io is a UI framework for computer graphics applications on the web. It supports virtual DOM, reactive rendering and data binding. It comes with a collection of UI elements for basic interactions, menus, layout and presentation.
+Io is a UI framework for computer graphics applications on the web. It supports virtual DOM, reactive rendering and data binding. It comes with a collection of UI elements for interactions, menus, layout and presentation.
 
-For a quick start, read this document, then check out included [collection of elements](#doc=elements-core#ioitem) and the [source code](https://github.com/io-gui/io/).
+For quick start, read this document, then check out included [collection of elements](#doc=elements-core#IoItem) and the the <a href="https://github.com/io-gui/io/" target="_blank">source code</a>.
 
 **Core UI library**
 
-The core library includes the most basic classes for buliding custom elements with minimal boilerplate. It also provides data binding, reactive functions and event-based data synchronization.
+The core library includes the most basic classes such as [IoElement](#doc=core-classes#IoElement) for buliding custom elements with minimal boilerplate. It also provides data binding, reactive functions and event-based data synchronization.
 
 **Design System**
 
-Io design system includes a [collection of UI elements](#doc=elements-core#ioitem) that range from simple input fields, to [menu systems](#doc=elements-menus#io-menu-item) and [responsive layouts](#doc=elements-layout#io-collapsable).
+Io design system includes a [collection of UI elements](#doc=elements-core#IoItem) that range from simple input fields, to [menu systems](#doc=elements-menus#IoMenuItem) and [responsive layouts](#doc=elements-layout#IoCollapsable).
 
 ## Usage
 
@@ -203,4 +203,4 @@ class MyApp extends IoElement {
 MyApp.Register();
 ```
 
-> Continue reading [advanced usage](#doc=learn-more) or check out the [included elements](#doc=elements-core#ioitem).
+> Continue reading [advanced usage](#doc=learn-more) or check out the [included elements](#doc=elements-core#IoItem).

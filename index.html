@@ -6,11 +6,11 @@
 
 		<title>UI framework for computer graphics on the web</title>
 
-		<meta name="description" content="Io library is designed to help web developers build data-driven web applications using native web technologies. It implements custom elements, virtual DOM, programmable templates, data binding and a simple data-flow design." />
+		<meta name="description" content="Io is a UI framework for computer graphics applications on the web. It supports virtual DOM, reactive rendering and data binding. It comes with a collection of UI elements for interactions, menus, layout and presentation." />
 		<meta name="keywords" content="io, gui, ui, ux, navigation, menu, io-gui, web components, custom elements, reactive, data binding, user interface, library, javascript, web development, webdev" />
 
 		<meta itemprop="name" content="UI framework for computer graphics on the web" />
-		<meta itemprop="description" content="UI framework for computer graphics on the web" />
+		<meta itemprop="description" content="Io is a UI framework for computer graphics applications on the web. It supports virtual DOM, reactive rendering and data binding. It comes with a collection of UI elements for interactions, menus, layout and presentation." />
 
 		<!-- Web application enable -->
 		<link rel="manifest" href="/manifest.json" />
@@ -45,14 +45,14 @@
 		<!-- Social sharing data -->
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:title" content="Io GUI: Documentation" />
-		<meta name="twitter:description" content="UI framework for computer graphics on the web" />
+		<meta name="twitter:description" content="Io is a UI framework for computer graphics applications on the web. It supports virtual DOM, reactive rendering and data binding. It comes with a collection of UI elements for interactions, menus, layout and presentation." />
 		<meta name="twitter:site" content="io-gui.dev" />
 		<meta name="twitter:creator" content="akirodic" />
 		<meta name="twitter:image" content="https://io-gui.dev/images/logo/io-512.png?001">
 		<meta name="twitter:image:alt" content="Io GUI">
 		<meta property="og:type" content="article" />
 		<meta property="og:title" content="Io GUI: Documentation" />
-		<meta property="og:description" content="UI framework for computer graphics on the web" />
+		<meta property="og:description" content="Io is a UI framework for computer graphics applications on the web. It supports virtual DOM, reactive rendering and data binding. It comes with a collection of UI elements for interactions, menus, layout and presentation." />
 		<meta property="og:image" content="https://io-gui.dev/images/logo/io-512.png?001" />
 		<meta property="og:locale" content="en_US" />
 
@@ -159,78 +159,81 @@
 							]},
 							{label: "Elements", options: [
 								{label: "Core Elements", options: [
-									{label: "IoItem", value: "core#IoItem"},
-									{label: "IoGl", value: "core#IoGl"},
-									{label: "IoButton", value: "core#IoButton"},
-									{label: "IoBoolean", value: "core#IoBoolean"},
-									{label: "IoBoolicon", value: "core#IoBoolicon"},
-									{label: "IoSwitch", value: "core#IoSwitch"},
-									{label: "IoString", value: "core#IoString"},
-									{label: "IoNumber", value: "core#IoNumber"},
-									{label: "IoSlider", value: "core#IoSlider"},
-									{label: "IoNumberSlider", value: "core#IoNumberSlider"},
-									{label: "IoSliderRange", value: "core#IoSliderRange"},
-									{label: "IoNumberSliderRange", value: "core#IoNumberSliderRange"},
-									{label: "IoIcon", value: "core#IoIcon"},
-									{label: "IoIconsetSingleton", value: "core#IoIconsetSingleton"},
-									{label: "IoLayerSingleton", value: "core#IoLayerSingleton"},
-									{label: "IoLadderSingleton", value: "core#IoLadderSingleton"},
-									{label: "IoThemeSingleton", value: "core#IoThemeSingleton"},
+									{label: "IoItem", value: "elements-core#IoItem"},
+									{label: "IoGl", value: "elements-core#IoGl"},
+									{label: "IoButton", value: "elements-core#IoButton"},
+									{label: "IoBoolean", value: "elements-core#IoBoolean"},
+									{label: "IoBoolicon", value: "elements-core#IoBoolicon"},
+									{label: "IoSwitch", value: "elements-core#IoSwitch"},
+									{label: "IoString", value: "elements-core#IoString"},
+									{label: "IoNumber", value: "elements-core#IoNumber"},
+									{label: "IoSlider", value: "elements-core#IoSlider"},
+									{label: "IoNumberSlider", value: "elements-core#IoNumberSlider"},
+									{label: "IoSliderRange", value: "elements-core#IoSliderRange"},
+									{label: "IoNumberSliderRange", value: "elements-core#IoNumberSliderRange"},
+									{label: "IoIcon", value: "elements-core#IoIcon"},
+									{label: "IoIconsetSingleton", value: "elements-core#IoIconsetSingleton"},
+									{label: "IoLayerSingleton", value: "elements-core#IoLayerSingleton"},
+									{label: "IoLadderSingleton", value: "elements-core#IoLadderSingleton"},
+									{label: "IoThemeSingleton", value: "elements-core#IoThemeSingleton"},
 								]},
 								{label: "Menus", options: [
-									{label: "IoMenuItem", value: "menus#IoMenuItem"},
-									{label: "IoMenuOptions", value: "menus#IoMenuOptions"},
-									{label: "IoOptionMenu", value: "menus#IoOptionMenu"},
-									{label: "IoContextMenu", value: "menus#IoContextMenu"},
+									{label: "IoMenuItem", value: "elements-menus#IoMenuItem"},
+									{label: "IoMenuOptions", value: "elements-menus#IoMenuOptions"},
+									{label: "IoOptionMenu", value: "elements-menus#IoOptionMenu"},
+									{label: "IoContextMenu", value: "elements-menus#IoContextMenu"},
 								]},
 								{label: "Object Editors", options: [
-									{label: "IoProperties", value: "object#IoProperties"},
-									{label: "IoObject", value: "object#IoObject"},
-									{label: "IoInspector", value: "object#IoInspector"},
-									{label: "IoBreadcrumbs", value: "object#IoBreadcrumbs"},
+									{label: "IoProperties", value: "elements-object#IoProperties"},
+									{label: "IoObject", value: "elements-object#IoObject"},
+									{label: "IoInspector", value: "elements-object#IoInspector"},
+									{label: "IoBreadcrumbs", value: "elements-object#IoBreadcrumbs"},
 								]},
 								{label: "Math", options: [
-									{label: "IoVector", value: "math#IoVector"},
-									{label: "IoMatrix", value: "math#IoMatrix"},
+									{label: "IoVector", value: "elements-math#IoVector"},
+									{label: "IoMatrix", value: "elements-math#IoMatrix"},
 								]},
 								{label: "Color", options: [
-									{label: "IoColorMixin", value: "color#IoColorMixin"},
-									{label: "IoColorVector", value: "color#IoColorVector"},
-									{label: "IoColorPanel", value: "color#IoColorPanel"},
-									{label: "IoColorPanelSingleton", value: "color#IoColorPanelSingleton"},
-									{label: "IoColorSwatch", value: "color#IoColorSwatch"},
-									{label: "IoColorPicker", value: "color#IoColorPicker"},
-									{label: "IoColorSliderHs", value: "color#IoColorSliderHs"},
-									{label: "IoColorSliderSv", value: "color#IoColorSliderSv"},
-									{label: "IoColorSliderSl", value: "color#IoColorSliderSl"},
-									{label: "IoColorSliderRed", value: "color#IoColorSliderRed"},
-									{label: "IoColorSliderGreen", value: "color#IoColorSliderGreen"},
-									{label: "IoColorSliderBlue", value: "color#IoColorSliderBlue"},
-									{label: "IoColorSliderAlpha", value: "color#IoColorSliderAlpha"},
-									{label: "IoColorSliderHue", value: "color#IoColorSliderHue"},
-									{label: "IoColorSliderSaturation", value: "color#IoColorSliderSaturation"},
-									{label: "IoColorSliderValue", value: "color#IoColorSliderValue"},
-									{label: "IoColorSliderLevel", value: "color#IoColorSliderLevel"},
-									{label: "IoColorSliderCyan", value: "color#IoColorSliderCyan"},
-									{label: "IoColorSliderMagenta", value: "color#IoColorSliderMagenta"},
-									{label: "IoColorSliderYellow", value: "color#IoColorSliderYellow"},
-									{label: "IoColorSliderKey", value: "color#IoColorSliderKey"},
+									{label: "IoColorMixin", value: "elements-color#IoColorMixin"},
+									{label: "IoColorVector", value: "elements-color#IoColorVector"},
+									{label: "IoColorPanel", value: "elements-color#IoColorPanel"},
+									{label: "IoColorPanelSingleton", value: "elements-color#IoColorPanelSingleton"},
+									{label: "IoColorSwatch", value: "elements-color#IoColorSwatch"},
+									{label: "IoColorPicker", value: "elements-color#IoColorPicker"},
+									{label: "IoColorSliderHs", value: "elements-color#IoColorSliderHs"},
+									{label: "IoColorSliderSv", value: "elements-color#IoColorSliderSv"},
+									{label: "IoColorSliderSl", value: "elements-color#IoColorSliderSl"},
+									{label: "IoColorSliderRed", value: "elements-color#IoColorSliderRed"},
+									{label: "IoColorSliderGreen", value: "elements-color#IoColorSliderGreen"},
+									{label: "IoColorSliderBlue", value: "elements-color#IoColorSliderBlue"},
+									{label: "IoColorSliderAlpha", value: "elements-color#IoColorSliderAlpha"},
+									{label: "IoColorSliderHue", value: "elements-color#IoColorSliderHue"},
+									{label: "IoColorSliderSaturation", value: "elements-color#IoColorSliderSaturation"},
+									{label: "IoColorSliderValue", value: "elements-color#IoColorSliderValue"},
+									{label: "IoColorSliderLevel", value: "elements-color#IoColorSliderLevel"},
+									{label: "IoColorSliderCyan", value: "elements-color#IoColorSliderCyan"},
+									{label: "IoColorSliderMagenta", value: "elements-color#IoColorSliderMagenta"},
+									{label: "IoColorSliderYellow", value: "elements-color#IoColorSliderYellow"},
+									{label: "IoColorSliderKey", value: "elements-color#IoColorSliderKey"},
 								]},
 								{label: "Layout", options: [
-									{label: "IoCollapsable", value: "layout#IoCollapsable"},
-									{label: "IoSelector", value: "layout#IoSelector"},
-									{label: "IoSelectorTabs", value: "layout#IoSelectorTabs"},
-									{label: "IoSelectorSidebar", value: "layout#IoSelectorSidebar"},
-									{label: "IoSidebar", value: "layout#IoSidebar"},
-									{label: "IoLayout", value: "layout#IoLayout"},
+									{label: "IoCollapsable", value: "elements-layout#IoCollapsable"},
+									{label: "IoSelector", value: "elements-layout#IoSelector"},
+									{label: "IoSelectorTabs", value: "elements-layout#IoSelectorTabs"},
+									{label: "IoSelectorSidebar", value: "elements-layout#IoSelectorSidebar"},
+									{label: "IoSidebar", value: "elements-layout#IoSidebar"},
+									{label: "IoLayout", value: "elements-layout#IoLayout"},
 								]},
 								{label: "Extras", options: [
-									{label: "io-md-view", value: "extras#io-md-view"},
-									{label: "io-service-loader", value: "extras#io-service-loader"},
+									{label: "io-md-view", value: "elements-extras#io-md-view"},
+									{label: "io-service-loader", value: "elements-extras#io-service-loader"},
 								]},
 							]},
+							{label: "Core Classes", options: [
+								{label: "IoNode", value: "core-classes#IoNode"},
+								{label: "IoElement", value: "core-classes#IoElement"},
+							]},
 							{label: "Learn More", options: [
-								{label: "Core Classes", value: "learn-more#core-classes"},
 								{label: "Creating Elements", value: "learn-more#creating-elements"},
 								{label: "Properties and Attributes", value: "learn-more#properties-and-attributes"},
 								{label: "Property Configuration", value: "learn-more#property-configuration"},
@@ -244,14 +247,15 @@
 						],
 						elements: [
 							['io-md-view', {name: 'getting-started', path :'./docs/getting-started.md'}],
+							['io-md-view', {name: 'core-classes', path :'./docs/core-classes.md'}],
 							['io-md-view', {name: 'learn-more', path :'./docs/learn-more.md'}],
-							['io-md-view', {name: 'core', path :'./docs/core.md'}],
-							['io-md-view', {name: 'menus', path :'./docs/menus.md'}],
-							['io-md-view', {name: 'object', path :'./docs/object.md'}],
-							['io-md-view', {name: 'math', path :'./docs/math.md'}],
-							['io-md-view', {name: 'color', path :'./docs/color.md'}],
-							['io-md-view', {name: 'layout', path :'./docs/layout.md'}],
-							['io-md-view', {name: 'extras', path :'./docs/extras.md'}],
+							['io-md-view', {name: 'elements-core', path :'./docs/elements-core.md'}],
+							['io-md-view', {name: 'elements-menus', path :'./docs/elements-menus.md'}],
+							['io-md-view', {name: 'elements-object', path :'./docs/elements-object.md'}],
+							['io-md-view', {name: 'elements-math', path :'./docs/elements-math.md'}],
+							['io-md-view', {name: 'elements-color', path :'./docs/elements-color.md'}],
+							['io-md-view', {name: 'elements-layout', path :'./docs/elements-layout.md'}],
+							['io-md-view', {name: 'elements-extras', path :'./docs/elements-extras.md'}],
 						],
 					}],
 					['io-selector-tabs', {name: 'demo', selected:	$({value: 'elements', storage: 'hash', key: 'demo'}),
