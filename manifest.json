@@ -1,7 +1,7 @@
 {
-  "name": "Io GUI JavaScript UI framework.",
+  "name": "Io GUI",
   "short_name": "Io GUI",
-  "description": "JavaScript UI framework for reactive web applications.",
+  "description": "UI framework for computer graphics on the web.",
   "lang": "en-US",
   "start_url": "/",
   "display": "standalone",

@@ -6,11 +6,11 @@ For quick start, read this document, then check out included [collection of elem
 
 **Core UI library**
 
-The core library includes the most basic classes such as [IoElement](#doc=core-classes#IoElement) for buliding custom elements with minimal boilerplate. It also provides data binding, reactive functions and event-based data synchronization.
+The core library includes the most basic classes such as [IoNode](#doc=core-classes#IoNode) and [IoElement](#doc=core-classes#IoElement) for buliding custom elements with minimal boilerplate. It also provides data binding, reactive functions and event-based data synchronization.
 
 **Design System**
 
-Io design system includes a [collection of UI elements](#doc=elements-core#IoItem) that range from simple input fields, to [menu systems](#doc=elements-menus#IoMenuItem) and [responsive layouts](#doc=elements-layout#IoCollapsable).
+Io design system includes a [collection of UI elements](#doc=elements-core#IoItem) that range from simple [input fields](#doc=elements-core#IoString), to [menu systems](#doc=elements-menus#IoMenuItem) and [responsive layouts](#doc=elements-layout#IoCollapsable).
 
 ## Usage
 
@@ -203,4 +203,4 @@ class MyApp extends IoElement {
 MyApp.Register();
 ```
 
-> Continue reading [advanced usage](#doc=learn-more) or check out the [included elements](#doc=elements-core#IoItem).
+> Continue reading [advanced usage](#doc=learn-more#creating-elements) or check out the [included elements](#doc=elements-core#IoItem).
