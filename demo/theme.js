@@ -1,5 +1,5 @@
 import {IoElement} from "../../io/build/io.js";
-import {IoThemeSingleton} from "../../io/build/io-core.js";
+import {IoThemeSingleton} from "../../io/build/io-elements.js";
 
 export class IoDemoTheme extends IoElement {
 	static get Style() {
