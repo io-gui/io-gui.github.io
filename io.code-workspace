@@ -10,7 +10,10 @@
 			"path": "../three-ui"
 		},
 		{
-			"path": "../three.js"
+			"path": "/Users/rodic/ArodicProjects/three.js-controls"
+		},
+		{
+			"path": "/Users/rodic/ArodicProjects/three.js"
 		}
 	],
 	"settings": {
@@ -18,17 +21,10 @@
 		"liveServer.settings.mount": [
 			["/io", "../io"], ["../io", "../io"],
 			["/three-ui", "../three-ui"], ["../three-ui", "../three-ui"],
-			["/three.js", "../three.js"], ["../three.js", "../three.js"]
+			["/three.js", "../three.js"], ["../three.js", "../three.js"],
+			["/three.js-controls", "../three.js-controls"], ["../three.js-controls", "../three.js-controls"]
 		],
 		"files.exclude": {
-			".*": true,
-			"CNAME": true,
-			"favicon.ico": true,
-			"images/": true,
-			"lib/": true,
-			"node_modules": true,
-			"robots.txt": true,
-			"rollup*.js": true
 		}
 	}
 }
