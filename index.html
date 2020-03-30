@@ -120,11 +120,6 @@
 		<script type="module">
 
 		import {IoSelectorTabs, IoThemeSingleton, IoStorageFactory as $} from "./io/build/io-elements.js";
-		import "./io/build/io-extras.js";
-		import "./io/build/io-docs.js";
-		import "./io/build/io-tests.js";
-		import "./three-ui/build/three-ui.js";
-		import "./demo/element-demo.js";
 
 		export class IoMainPage extends IoSelectorTabs {
 			static get Properties() {
@@ -146,7 +141,7 @@
 					{label: 'Test', value: 'test'},
 				];
 				this.elements = [
-					['io-docs', {name: 'docs'}],
+					['io-docs', {name: 'docs', import: './io/build/io-docs.js'}],
 					['io-selector-tabs', {name: 'demo', selected:	$({value: 'elements', storage: 'hash', key: 'demo'}),
 						options: [
 							{value: 'elements', label: "Elements"},
@@ -155,13 +150,13 @@
 							{value: 'todo', label: "Todo App"},
 						],
 						elements: [
-							['io-demo-core', {name: 'elements', import: './demo/elements.js'}],
-							['io-demo-theme', {name: 'theme', import: './demo/theme.js'}],
-							['io-demo-three', {name: 'three', import: './demo/three.js'}],
-							['iframe', {name: 'todo', title: 'TODO MVC', src: './demo/todomvc/index.html'}],
+							['io-demo-elements-core', {name: 'elements', import: './io/demos/demo-elements-core.js'}],
+							['io-demo-theme-editor', {name: 'theme', import: './io/demos/demo-theme-editor.js'}],
+							['io-demo-three', {name: 'three', import: './three-ui/demo/three.js'}],
+							['iframe', {name: 'todo', title: 'TODO MVC', src: './io/demos/todomvc/index.html'}],
 						],
 					}],
-					['io-tests', {name: 'test', title: 'Test'}],
+					['io-tests', {name: 'test', title: 'Test', import: './io/build/io-tests.js'}],
 				];
 			}
 		}
