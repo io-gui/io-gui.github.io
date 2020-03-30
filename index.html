@@ -133,14 +133,17 @@
 			constructor(props) {
 				super(props);
 				this.slotted = [
-					['a', {href: '#doc=getting-started#about-io', '@aria-label': 'About Io-GUI'}, [['io-icon', {icon: 'icons:io', class:'logo'}]]],
+					['a', {href: '#page=home', '@aria-label': 'About Io-GUI'}, [['io-icon', {icon: 'icons:io', class:'logo'}]]],
 				];
 				this.options = [
-					{label: 'Docs', value: 'docs'},
+					{label: 'Io-GUI.js', value: 'home'}, 
+					{label: 'Docs', value: 'docs'}, 
 					{label: 'Demo', value: 'demo'},
 					{label: 'Test', value: 'test'},
 				];
 				this.elements = [
+					['io-md-view', {name: 'home', path: './io/README.md', import: './io/build/io-extras.js'}],
+					['io-docs', {name: 'docs', import: './io/build/io-docs.js'}],
 					['io-docs', {name: 'docs', import: './io/build/io-docs.js'}],
 					['io-selector-tabs', {name: 'demo', selected:	$({value: 'elements', storage: 'hash', key: 'demo'}),
 						options: [
