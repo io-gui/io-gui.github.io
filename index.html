@@ -105,14 +105,41 @@
       }
     </style>
     <link href="./io/lib/mocha.css" rel="stylesheet" />
+  </head>
+  <body>
     <script type="module">
 
+    // import {Options, Route} from "./io/build/io.js";
     import {IoSelectorTabs, IoThemeSingleton, IoStorageFactory as $} from "./io/build/io-elements.js";
     import "./io/build/io-extras.js";
 
     const docPath = './io/docs/';
     const srcPath = './io/src/';
     const elementsPath = './io/src/elements/';
+
+    // const router = new Route({
+    //   options: new Options([
+    //     {value: 'home', label: 'About', icon: 'icons:io_logo'},
+    //     {value: 'docs', label: 'Documentation', options: [
+    //       {value: 'introduction', label: 'Introduction', options: [
+    //         {value: docPath + 'getting-started.md'},
+    //       ]},
+    //       {value: 'advanced', label: 'Advanced', options: [
+    //         {value: docPath + 'learn-more.md'},
+    //       ]},
+    //       {value: 'reference', label: 'Reference', options: [
+    //         {value: srcPath + 'core/io-node.md'},
+    //       ]},
+    //     ]},
+    //     {value: 'demos', label: 'Demos', options: [
+    //       {value: 'elements', label: 'Elements'},
+    //       {value: 'theme', label: 'Theme'},
+    //       {value: 'todo', label: 'TODO App'},
+    //       {value: 'three', label: 'Three.js'},
+    //     ]},
+    //     {label: 'Tests', value: 'tests'},
+    //   ])
+    // });
 
     const PAGE = $({value: 'home', storage: 'hash', key: 'page'});
     const INTRODUCTION = $({value: docPath + 'getting-started.md', storage: 'hash', key: 'introduction'});
@@ -143,10 +170,7 @@
             {label: "Todo App", value: 'todo'},
             {label: "Three.js", value: 'three'},
           ]},
-          {label: 'Development', options: [
-            {label: 'Tests', value: 'tests'},
-            {label: 'Contributing', value: 'contributing'},
-          ]},
+          {label: 'Tests', value: 'tests'},
         ];
         this.elements = [
           ['io-md-view', {name: 'home', path: './io/README.md', import: './io/build/io-extras.js'}],
@@ -269,8 +293,6 @@
     }
     IoMainPage.Register();
     </script>
-  </head>
-  <body>
     <noscript>JavaScript is required to view this page!</noscript>
     <io-main-page></io-main-page>
   </body>
