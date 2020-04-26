@@ -109,7 +109,7 @@
   <body>
     <script type="module">
 
-    import {Options} from "./io/build/io-elements.js";
+    import {Options} from "./io/build/io.js";
     import {IoSelectorTabs, IoThemeSingleton, IoStorageFactory as $} from "./io/build/io-elements.js";
     import "./io/build/io-extras.js";
 
@@ -119,7 +119,7 @@
 
     const OPTIONS = new Options([
       {label: 'About', value: 'home', icon: 'icons:io_logo'}, 
-      {label: 'Documentation', value: 'docs', options: [
+      {label: 'Documentation', value: 'docs', selected: 'introduction', options: [ // TODO: use default selection instead selected: 'introduction', 
         {label: 'Introduction', value: 'introduction', options: [
           {label: 'Usage', value: docPath + 'getting-started.md#usage'},
           {label: 'Simple App Example', value: docPath + 'getting-started.md#simple-app-example'},
@@ -143,72 +143,72 @@
           {label: 'IoNode', value: srcPath + 'core/io-node.md'},
           {label: 'IoElement', value: srcPath + 'core/io-element.md'},
           {label: 'Core Elements', value: 'coreelements', options: [
-            {label: 'IoItem', value: elementsPath + '/core/item.md'},
-            {label: 'IoGl', value: elementsPath + '/core/gl.md'},
-            {label: 'IoButton', value: elementsPath + '/core/button.md'},
-            {label: 'IoBoolean', value: elementsPath + '/core/boolean.md'},
-            {label: 'IoBoolicon', value: elementsPath + '/core/boolicon.md'},
-            {label: 'IoSwitch', value: elementsPath + '/core/switch.md'},
-            {label: 'IoString', value: elementsPath + '/core/string.md'},
-            {label: 'IoNumber', value: elementsPath + '/core/number.md'},
-            {label: 'IoSlider', value: elementsPath + '/core/slider.md'},
-            {label: 'IoNumberSlider', value: elementsPath + '/core/number-slider.md'},
-            {label: 'IoSliderRange', value: elementsPath + '/core/slider-range.md'},
-            {label: 'IoNumberSliderRange', value: elementsPath + '/core/number-slider-range.md'},
-            {label: 'IoIcon', value: elementsPath + '/core/icon.md'},
-            {label: 'IoIconsetSingleton', value: elementsPath + '/core/iconset.md'}, // TODO: singleton callout
-            {label: 'IoLayerSingleton', value: elementsPath + '/core/layer.md'}, // TODO: singleton callout
-            {label: 'IoLadderSingleton', value: elementsPath + '/core/ladder.md'}, // TODO: singleton callout
-            {label: 'IoThemeSingleton', value: elementsPath + '/core/theme.md'}, // TODO: singleton callout
+            {label: 'IoItem', value: elementsPath + 'core/item.md'},
+            {label: 'IoGl', value: elementsPath + 'core/gl.md'},
+            {label: 'IoButton', value: elementsPath + 'core/button.md'},
+            {label: 'IoBoolean', value: elementsPath + 'core/boolean.md'},
+            {label: 'IoBoolicon', value: elementsPath + 'core/boolicon.md'},
+            {label: 'IoSwitch', value: elementsPath + 'core/switch.md'},
+            {label: 'IoString', value: elementsPath + 'core/string.md'},
+            {label: 'IoNumber', value: elementsPath + 'core/number.md'},
+            {label: 'IoSlider', value: elementsPath + 'core/slider.md'},
+            {label: 'IoNumberSlider', value: elementsPath + 'core/number-slider.md'},
+            {label: 'IoSliderRange', value: elementsPath + 'core/slider-range.md'},
+            {label: 'IoNumberSliderRange', value: elementsPath + 'core/number-slider-range.md'},
+            {label: 'IoIcon', value: elementsPath + 'core/icon.md'},
+            {label: 'IoIconsetSingleton', value: elementsPath + 'core/iconset.md'}, // TODO: singleton callout
+            {label: 'IoLayerSingleton', value: elementsPath + 'core/layer.md'}, // TODO: singleton callout
+            {label: 'IoLadderSingleton', value: elementsPath + 'core/ladder.md'}, // TODO: singleton callout
+            {label: 'IoThemeSingleton', value: elementsPath + 'core/theme.md'}, // TODO: singleton callout
           ]},
           {label: 'Menus', value: 'menus', options: [
-            {label: 'IoMenuItem', value: elementsPath + '/menus/menu-item.md'},
-            {label: 'IoMenuOptions', value: elementsPath + '/menus/menu-options.md'},
-            {label: 'IoOptionMenu', value: elementsPath + '/menus/option-menu.md'},
-            {label: 'IoContextMenu', value: elementsPath + '/menus/context-menu.md'},
+            {label: 'IoMenuItem', value: elementsPath + 'menus/menu-item.md'},
+            {label: 'IoMenuOptions', value: elementsPath + 'menus/menu-options.md'},
+            {label: 'IoOptionMenu', value: elementsPath + 'menus/option-menu.md'},
+            {label: 'IoContextMenu', value: elementsPath + 'menus/context-menu.md'},
           ]},
           {label: 'Object Editors', value: 'objecteditors', options: [
-            {label: 'IoProperties', value: elementsPath + '/object/properties.md'},
-            {label: 'IoObject', value: elementsPath + '/object/object.md'},
-            {label: 'IoInspector', value: elementsPath + '/object/inspector.md'},
-            {label: 'IoBreadcrumbs', value: elementsPath + '/object/breadcrumbs.md'},
-            {label: 'IoConfig', value: elementsPath + '/object/config.md'},
-            {label: 'IoGroups', value: elementsPath + '/object/groups.md'},
-            {label: 'IoWidgets', value: elementsPath + '/object/widgets.md'},
+            {label: 'IoProperties', value: elementsPath + 'object/properties.md'},
+            {label: 'IoObject', value: elementsPath + 'object/object.md'},
+            {label: 'IoInspector', value: elementsPath + 'object/inspector.md'},
+            {label: 'IoBreadcrumbs', value: elementsPath + 'object/breadcrumbs.md'},
+            {label: 'IoConfig', value: elementsPath + 'object/config.md'},
+            {label: 'IoGroups', value: elementsPath + 'object/groups.md'},
+            {label: 'IoWidgets', value: elementsPath + 'object/widgets.md'},
           ]},
           {label: 'Math', value: 'math', options: [
-            {label: 'IoVector', value: elementsPath + '/math/vector.md'},
-            {label: 'IoMatrix', value: elementsPath + '/math/matrix.md'},
+            {label: 'IoVector', value: elementsPath + 'math/vector.md'},
+            {label: 'IoMatrix', value: elementsPath + 'math/matrix.md'},
           ]},
           {label: 'Color', value: 'color', options: [
-            {label: 'IoColorMixin', value: elementsPath + '/color/color.md'},
-            {label: 'IoColorVector', value: elementsPath + '/color/color-vector.md'},
-            {label: 'IoColorPanel', value: elementsPath + '/color/color-panel.md'}, // TODO: singleton callout
-            {label: 'IoColorSwatch', value: elementsPath + '/color/color-swatch.md'},
-            {label: 'IoColorPicker', value: elementsPath + '/color/color-picker.md'},
-            {label: 'IoColorSliderHs', value: elementsPath + '/color/color-slider-hs.md'},
-            {label: 'IoColorSliderSv', value: elementsPath + '/color/color-slider-sv.md'},
-            {label: 'IoColorSliderSl', value: elementsPath + '/color/color-slider-sl.md'},
-            {label: 'IoColorSliderRed', value: elementsPath + '/color/color-slider-red.md'},
-            {label: 'IoColorSliderGreen', value: elementsPath + '/color/color-slider-green.md'},
-            {label: 'IoColorSliderBlue', value: elementsPath + '/color/color-slider-blue.md'},
-            {label: 'IoColorSliderAlpha', value: elementsPath + '/color/color-slider-alpha.md'},
-            {label: 'IoColorSliderHue', value: elementsPath + '/color/color-slider-hue.md'},
-            {label: 'IoColorSliderSaturation', value: elementsPath + '/color/color-slider-saturation.md'},
-            {label: 'IoColorSliderValue', value: elementsPath + '/color/color-slider-value.md'},
-            {label: 'IoColorSliderLevel', value: elementsPath + '/color/color-slider-level.md'},
-            {label: 'IoColorSliderCyan', value: elementsPath + '/color/color-slider-cyan.md'},
-            {label: 'IoColorSliderMagenta', value: elementsPath + '/color/color-slider-magenta.md'},
-            {label: 'IoColorSliderYellow', value: elementsPath + '/color/color-slider-yellow.md'},
-            {label: 'IoColorSliderKey', value: elementsPath + '/color/color-slider-key.md'},
+            {label: 'IoColorMixin', value: elementsPath + 'color/color.md'},
+            {label: 'IoColorVector', value: elementsPath + 'color/color-vector.md'},
+            {label: 'IoColorPanel', value: elementsPath + 'color/color-panel.md'}, // TODO: singleton callout
+            {label: 'IoColorSwatch', value: elementsPath + 'color/color-swatch.md'},
+            {label: 'IoColorPicker', value: elementsPath + 'color/color-picker.md'},
+            {label: 'IoColorSliderHs', value: elementsPath + 'color/color-slider-hs.md'},
+            {label: 'IoColorSliderSv', value: elementsPath + 'color/color-slider-sv.md'},
+            {label: 'IoColorSliderSl', value: elementsPath + 'color/color-slider-sl.md'},
+            {label: 'IoColorSliderRed', value: elementsPath + 'color/color-slider-red.md'},
+            {label: 'IoColorSliderGreen', value: elementsPath + 'color/color-slider-green.md'},
+            {label: 'IoColorSliderBlue', value: elementsPath + 'color/color-slider-blue.md'},
+            {label: 'IoColorSliderAlpha', value: elementsPath + 'color/color-slider-alpha.md'},
+            {label: 'IoColorSliderHue', value: elementsPath + 'color/color-slider-hue.md'},
+            {label: 'IoColorSliderSaturation', value: elementsPath + 'color/color-slider-saturation.md'},
+            {label: 'IoColorSliderValue', value: elementsPath + 'color/color-slider-value.md'},
+            {label: 'IoColorSliderLevel', value: elementsPath + 'color/color-slider-level.md'},
+            {label: 'IoColorSliderCyan', value: elementsPath + 'color/color-slider-cyan.md'},
+            {label: 'IoColorSliderMagenta', value: elementsPath + 'color/color-slider-magenta.md'},
+            {label: 'IoColorSliderYellow', value: elementsPath + 'color/color-slider-yellow.md'},
+            {label: 'IoColorSliderKey', value: elementsPath + 'color/color-slider-key.md'},
           ]},
           {label: 'Layout', value: 'layout', options: [
-            {label: 'IoCollapsable', value: elementsPath + '/layout/collapsable.md'},
-            {label: 'IoSelector', value: elementsPath + '/layout/selector.md'},
-            {label: 'IoSelectorTabs', value: elementsPath + '/layout/selector-tabs.md'},
-            {label: 'IoSelectorSidebar', value: elementsPath + '/layout/selector-sidebar.md'},
-            {label: 'IoSidebar', value: elementsPath + '/layout/sidebar.md'},
-            {label: 'IoLayout', value: elementsPath + '/layout/layout.md'},
+            {label: 'IoCollapsable', value: elementsPath + 'layout/collapsable.md'},
+            {label: 'IoSelector', value: elementsPath + 'layout/selector.md'},
+            {label: 'IoSelectorTabs', value: elementsPath + 'layout/selector-tabs.md'},
+            {label: 'IoSelectorSidebar', value: elementsPath + 'layout/selector-sidebar.md'},
+            {label: 'IoSidebar', value: elementsPath + 'layout/sidebar.md'},
+            {label: 'IoLayout', value: elementsPath + 'layout/layout.md'},
           ]},
           {label: 'Extras', value: 'extras', options: [
             {label: 'io-md-view', value: srcPath + 'extras/md-view.md'}, // TODO: md-view-selector
@@ -229,16 +229,17 @@
         {label: "Theme", value: 'theme'},
         {label: "Todo App", value: 'todo'},
         {label: "Three.js", value: 'three'},
-        {label: 'Toggles', value: 'togles', select: 'toggle', options: [
-          {label: "Toggle1", value: 'toggle1'},
-          {label: "Toggle2", value: 'toggle2'},
-          {label: "Toggle3", value: 'toggle3'},
-          {label: "Toggle4", value: 'toggle4'},
+        {label: "Menu", value: 'menu'},
+        {label: 'Toggles', value: 'togles', options: [
+          {label: "Toggle1", value: 'toggle1', select: 'toggle'},
+          {label: "Toggle2", value: 'toggle2', select: 'toggle'},
+          {label: "Toggle3", value: 'toggle3', select: 'toggle'},
+          {label: "Toggle4", value: 'toggle4', select: 'toggle'},
         ]},
         {label: "Toggle", value: 'toggle', select: 'toggle'},
       ]},
       {label: 'Tests', value: 'tests'},
-    ], {select: 'pick'});
+    ], {select: 'pick', selected: 'docs'}); // TODO: use default selection instead selected: 'docs', 
 
     export class IoMainPage extends IoSelectorTabs {
       static get Properties() {
@@ -248,23 +249,24 @@
           cache: true,
           horizontal: true,
           options: OPTIONS,
-          selected: OPTIONS.bind('selected'),
+          selected: OPTIONS.bind('selectedRoot'),
           elements: [
             ['io-md-view', {name: 'home', path: './io/README.md', import: './io/build/io-extras.js'}],
-            ['io-selector', {name: 'docs', selected: OPTIONS.option('docs').bind('selected'), elements: [
-              ['io-md-view-selector', {name: 'introduction', selected: OPTIONS.option('docs').options.option('introduction').bind('selected'),
+            ['io-selector', {name: 'docs', selected: OPTIONS.option('docs').bind('selectedRoot'), elements: [
+              ['io-md-view-selector', {name: 'introduction', selected: OPTIONS.option('docs').options.option('introduction').bind('selectedLeaf'),
                 options: OPTIONS.option('docs').options.option('introduction').options
               }],
-              ['io-md-view-selector', {name: 'advanced', selected: OPTIONS.option('docs').options.option('advanced').bind('selected'),
+              ['io-md-view-selector', {name: 'advanced', selected: OPTIONS.option('docs').options.option('advanced').bind('selectedLeaf'),
                 options: OPTIONS.option('docs').options.option('advanced').options
               }],
-              ['io-md-view-selector', {name: 'reference', selected: OPTIONS.option('docs').options.option('reference').bind('selected'),
+              ['io-md-view-selector', {name: 'reference', selected: OPTIONS.option('docs').options.option('reference').bind('selectedLeaf'),
                 options: OPTIONS.option('docs').options.option('reference').options
               }],
             ]}],
-            ['io-selector', {name: 'demos', selected: OPTIONS.option('demos').bind('selected'), elements: [
-              ['io-demo-elements-core', {name: 'elements', import: './io/demos/demo-elements-core.js'}],
-              ['io-demo-theme-editor', {name: 'theme', import: './io/demos/demo-theme-editor.js'}],
+            ['io-selector', {name: 'demos', selected: OPTIONS.option('demos').bind('selectedRoot'), elements: [
+              ['io-demo-elements-core', {name: 'elements', import: './io/demos/elements-core.js'}],
+              ['io-demo-theme-editor', {name: 'theme', import: './io/demos/theme-editor.js'}],
+              ['io-demo-menu', {name: 'menu', import: './io/demos/menu.js'}],
               ['iframe', {name: 'todo', title: 'TODO MVC', src: './io/demos/todomvc/index.html'}],
               ['io-demo-three', {name: 'three', import: './three-ui/demo/three.js'}],
             ]}],
