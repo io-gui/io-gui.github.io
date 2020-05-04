@@ -109,9 +109,47 @@
   <body>
     <script type="module">
 
-    import {Options} from "./io/build/io.js";
+    import {IoNode, Options} from "./io/build/io.js";
     import {IoSelectorTabs, IoThemeSingleton, IoStorageFactory as $} from "./io/build/io-elements.js";
     import "./io/build/io-extras.js";
+
+    class PathString extends IoNode {
+      static get Properties() {
+        return {
+          path: {
+            type: Array,
+            value: null,
+          },
+          string: $({key: 'path', storage: 'hash'}),
+        }
+      }
+      constructor(props) {
+        super(props);
+        this.stringChanged();
+      }
+      pathChanged() {
+        let string = '';
+        for (let i = 0; i < this.path.length; i++) {
+          if (this.path[i].search(/\/|\#|\s/) !== -1) {
+            console.warn(`IoGUI PathString: path value ${this.path[i]} cannot be converted to string. Don't use "/", " " and "#"`);
+            break;
+          }
+          string += this.path[i];
+          if (i !== this.path.length - 1) {
+            string += '/';
+          }
+        }
+        this.string = string;
+      }
+      stringChanged() {
+        if (!this.string) this.path = [];
+        else this.path = this.string.split(/\//);
+      }
+    }
+    PathString.Register();
+
+    const pathString = new PathString();
+    pathString.connect(this);
 
     const docPath = './io/docs/';
     const srcPath = './io/src/';
@@ -119,7 +157,7 @@
 
     const OPTIONS = new Options([
       {label: 'About', value: 'home', icon: 'icons:io_logo'}, 
-      {label: 'Documentation', value: 'docs', selected: 'introduction', options: [ // TODO: use default selection instead selected: 'introduction', 
+      {label: 'Documentation', value: 'docs', options: [
         {label: 'Introduction', value: 'introduction', options: [
           {label: 'Usage', value: docPath + 'getting-started.md#usage'},
           {label: 'Simple App Example', value: docPath + 'getting-started.md#simple-app-example'},
@@ -128,6 +166,13 @@
           {label: 'Listeners', value: docPath + 'getting-started.md#listeners'},
           {label: 'Change Functions', value: docPath + 'getting-started.md#change-functions'},
           {label: 'Simple App Recap', value: docPath + 'getting-started.md#simple-app-recap'},
+          // {label: 'Usage', value: 'usage', hint: docPath + 'getting-started.md#usage'},
+          // {label: 'Simple App Example', value: 'example', hint: docPath + 'getting-started.md#simple-app-example'},
+          // {label: 'Style', value: 'style', hint: docPath + 'getting-started.md#style'},
+          // {label: 'Properties', value: 'properties', hint: docPath + 'getting-started.md#properties'},
+          // {label: 'Listeners', value: 'listeners', hint: docPath + 'getting-started.md#listeners'},
+          // {label: 'Change Functions', value: 'functions', hint: docPath + 'getting-started.md#change-functions'},
+          // {label: 'Simple App Recap', value: 'recap', hint: docPath + 'getting-started.md#simple-app-recap'},
         ]},
         {label: 'Advanced', value: 'advanced', options: [
           {label: 'Creating Elements', value: docPath + 'learn-more.md#creating-elements'},
@@ -239,7 +284,9 @@
         {label: "Toggle", value: 'toggle', select: 'toggle'},
       ]},
       {label: 'Tests', value: 'tests'},
-    ], {select: 'pick', selected: 'docs'}); // TODO: use default selection instead selected: 'docs', 
+    ], {
+      selectedPath: pathString.bind('path')
+    });
 
     export class IoMainPage extends IoSelectorTabs {
       static get Properties() {
@@ -250,21 +297,35 @@
           horizontal: true,
           options: OPTIONS,
           selected: OPTIONS.bind('selectedRoot'),
+          depth: 2,
           elements: [
-            ['io-md-view', {name: 'home', path: './io/README.md', import: './io/build/io-extras.js'}],
-            ['io-selector', {name: 'docs', selected: OPTIONS.option('docs').bind('selectedRoot'), elements: [
-              ['io-md-view-selector', {name: 'introduction', selected: OPTIONS.option('docs').options.option('introduction').bind('selectedLeaf'),
-                options: OPTIONS.option('docs').options.option('introduction').options
-              }],
-              ['io-md-view-selector', {name: 'advanced', selected: OPTIONS.option('docs').options.option('advanced').bind('selectedLeaf'),
-                options: OPTIONS.option('docs').options.option('advanced').options
-              }],
-              ['io-md-view-selector', {name: 'reference', selected: OPTIONS.option('docs').options.option('reference').bind('selectedLeaf'),
-                options: OPTIONS.option('docs').options.option('reference').options
-              }],
-            ]}],
+            ['io-md-view', {
+              name: 'home',
+              path: './io/README.md',
+              import: './io/build/io-extras.js'}],
+            ['io-selector', {
+              name: 'docs',
+              selected: OPTIONS.option('docs').bind('selectedRoot'),
+              elements: [
+                ['io-md-view-selector', {
+                  name: 'introduction',
+                  selected: OPTIONS.option('docs').option('introduction').bind('selectedLeaf'),
+                  options: OPTIONS.option('docs').option('introduction').options,
+                }],
+                ['io-md-view-selector', {
+                  name: 'advanced',
+                  selected: OPTIONS.option('docs').option('advanced').bind('selectedLeaf'),
+                  options: OPTIONS.option('docs').option('advanced').options,
+                }],
+                ['io-md-view-selector', {
+                  name: 'reference',
+                  selected: OPTIONS.option('docs').option('reference').bind('selectedLeaf'),
+                  options: OPTIONS.option('docs').option('reference').options,
+                }],
+              ]
+            }],
             ['io-selector', {name: 'demos', selected: OPTIONS.option('demos').bind('selectedRoot'), elements: [
-              ['io-demo-elements-core', {name: 'elements', import: './io/demos/elements-core.js'}],
+              ['io-demo-elements', {name: 'elements', import: './io/demos/elements.js'}],
               ['io-demo-theme-editor', {name: 'theme', import: './io/demos/theme-editor.js'}],
               ['io-demo-menu', {name: 'menu', import: './io/demos/menu.js'}],
               ['iframe', {name: 'todo', title: 'TODO MVC', src: './io/demos/todomvc/index.html'}],
