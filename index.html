@@ -96,11 +96,11 @@
   <body>
     <script type="module">
 
-    import {IoNode, Options} from "./io/build/io.js";
+    import {Node, Options} from "./io/build/io.js";
     import {IoSelectorTabs, IoThemeSingleton, IoStorageFactory as $} from "./io/build/io-elements.js";
     import "./io/build/io-extras.js";
 
-    class PathString extends IoNode {
+    class PathString extends Node {
       static get Properties() {
         return {
           path: {
@@ -165,7 +165,7 @@
           {label: 'Data Flow', value: docPath + 'learn-more.md#data-flow'},
         ]},
         {label: 'Reference', value: 'reference', options: [
-          {label: 'IoNode', value: srcPath + 'core/io-node.md'},
+          {label: 'Node', value: srcPath + 'core/node.md'},
           {label: 'IoElement', value: srcPath + 'core/io-element.md'},
           {label: 'Core Elements', value: 'coreelements', options: [
             {label: 'IoItem', value: elementsPath + 'core/item.md'},
