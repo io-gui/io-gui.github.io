@@ -1,7 +1,7 @@
 {
-  "name": "Io GUI",
-  "short_name": "Io GUI",
-  "description": "UI framework for computer graphics on the web.",
+  "name": "IoGui",
+  "short_name": "IoGui",
+  "description": "IoGui is a simple web framework for the web.",
   "lang": "en-US",
   "start_url": "/",
   "display": "standalone",
