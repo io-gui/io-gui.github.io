@@ -4,7 +4,7 @@
 			"path": "."
 		},
 		{
-			"path": "../io"
+			"path": "../iogui"
 		},
 		{
 			"path": "../three-ui"
@@ -19,7 +19,7 @@
 	"settings": {
 		"liveServer.settings.multiRootWorkspaceName": "io-gui.github.io",
 		"liveServer.settings.mount": [
-			["/io", "../io"], ["../io", "../io"],
+			["/iogui", "../iogui"], ["../iogui", "../iogui"],
 			["/three-ui", "../three-ui"], ["../three-ui", "../three-ui"],
 			["/three.js", "../three.js"], ["../three.js", "../three.js"],
 			["/three.js-controls", "../three.js-controls"], ["../three.js-controls", "../three.js-controls"]
