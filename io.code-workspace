@@ -25,6 +25,12 @@
 			["/three.js-controls", "../three.js-controls"], ["../three.js-controls", "../three.js-controls"]
 		],
 		"files.exclude": {
+			"LICENSE": true,
+			"robots.txt": true,
+			"favicon.ico": true,
+			"node_modules/": true,
+			"yarn.lock": true,
+			".*": true,
 		}
 	}
 }
