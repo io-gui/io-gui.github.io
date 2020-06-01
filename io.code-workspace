@@ -10,10 +10,10 @@
 			"path": "../three-ui"
 		},
 		{
-			"path": "/Users/rodic/ArodicProjects/three.js-controls"
+			"path": "../three.js-controls"
 		},
 		{
-			"path": "/Users/rodic/ArodicProjects/three.js"
+			"path": "../three.js"
 		}
 	],
 	"settings": {
