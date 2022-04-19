@@ -28,19 +28,19 @@
 
     <!-- Home screen icons -->
     <link rel="shortcut icon" href="./favicon.ico" />
-    <meta itemprop="image" content="./iogui/images/logo/io-512.png" />
-    <meta name="msapplication-TileImage" content="./iogui/images/logo/io-144-precomposed.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="./iogui/images/logo/io-144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./iogui/images/logo/io-152.png">
+    <meta itemprop="image" content="./io/images/logo/io-512.png" />
+    <meta name="msapplication-TileImage" content="./io/images/logo/io-144-precomposed.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="./io/images/logo/io-144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./io/images/logo/io-152.png">
 
     <!-- Other icons -->
-    <link rel="icon" type="image/png" href="./iogui/images/logo/io-512.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="./iogui/images/logo/io-192.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="./iogui/images/logo/io-96.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./iogui/images/logo/io-32-alt.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./iogui/images/logo/io-16.png" />
-    <link rel="apple-touch-icon" href="./iogui/images/logo/io-152.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="./iogui/images/logo/io-72.png">
+    <link rel="icon" type="image/png" href="./io/images/logo/io-512.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./io/images/logo/io-192.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="./io/images/logo/io-96.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./io/images/logo/io-32-alt.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./io/images/logo/io-16.png" />
+    <link rel="apple-touch-icon" href="./io/images/logo/io-152.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="./io/images/logo/io-72.png">
 
     <!-- Social sharing data -->
     <meta name="twitter:card" content="summary" />
@@ -58,9 +58,9 @@
 
     <link lazyload href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap|Roboto+Mono&display=swap" rel="stylesheet">
 
-    <link lazyload href="./iogui/lib/highlight.a11y-light.css" rel="stylesheet">
-    <script src="./iogui/lib/detect.js"></script>
-    <script src="./iogui/lib/highlight.pack.js"></script>
+    <link lazyload href="./io/lib/highlight.a11y-light.css" rel="stylesheet">
+    <script src="./io/lib/detect.js"></script>
+    <script src="./io/lib/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
     <style>
@@ -91,17 +91,17 @@
         flex: 1 1;
       }
     </style>
-    <link href="./iogui/lib/mocha.css" rel="stylesheet" />
+    <link href="./io/lib/mocha.css" rel="stylesheet" />
   </head>
   <body>
     <script type="module">
 
-    import {Node, Options, Path} from "./iogui/build/iogui.js";
-    import {IoSelectorTabs, IoThemeSingleton, IoStorageFactory as $} from "./iogui/build/iogui.js";
+    import {Node, Options, Path} from "./io/build/iogui.js";
+    import {IoSelectorTabs, IoThemeSingleton, IoStorageFactory as $} from "./io/build/iogui.js";
 
-    const docPath = './iogui/docs/';
-    const srcPath = './iogui/src/';
-    const elementsPath = './iogui/src/elements/';
+    const docPath = './io/docs/';
+    const srcPath = './io/src/';
+    const elementsPath = './io/src/elements/';
 
     const OPTIONS = new Options([
       {label: 'About', value: 'home', icon: 'icons:io_logo'}, 
@@ -233,7 +233,7 @@
           elements: [
             ['io-md-view', {
               name: 'home',
-              path: './iogui/README.md'}],
+              path: './io/README.md'}],
             ['io-md-view-selector', {
               name: 'docs',
               selected: OPTIONS.option('docs').path.bind('leaf'),
@@ -245,13 +245,13 @@
               options: OPTIONS.option('reference').options,
             }],
             ['io-selector', {name: 'demos', selected: OPTIONS.option('demos').path.bind('leaf'), elements: [
-              ['io-demo-elements', {name: 'elements', import: './iogui/demos/elements.js'}],
-              ['io-demo-theme-editor', {name: 'theme', import: './iogui/demos/theme-editor.js'}],
-              ['io-demo-menu', {name: 'menu', import: './iogui/demos/menu.js'}],
-              ['iframe', {name: 'todo', title: 'TODO MVC', src: './iogui/demos/todomvc/index.html'}],
+              ['io-demo-elements', {name: 'elements', import: './io/demos/elements.js'}],
+              ['io-demo-theme-editor', {name: 'theme', import: './io/demos/theme-editor.js'}],
+              ['io-demo-menu', {name: 'menu', import: './io/demos/menu.js'}],
+              ['iframe', {name: 'todo', title: 'TODO MVC', src: './io/demos/todomvc/index.html'}],
               ['io-demo-three', {name: 'three', import: './three-ui/demo/three.js'}],
             ]}],
-            ['io-test', {name: 'tests', title: 'Tests', import: './iogui/build/iogui.test.js'}],
+            ['io-test', {name: 'tests', title: 'Tests', import: './io/build/iogui.test.js'}],
           ]
         };
       }
