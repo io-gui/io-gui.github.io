@@ -8,39 +8,39 @@
   "background_color": "#f5f5f5",
   "theme_color": "#f5f5f5",
   "icons": [{
-    "src": "iogui/images/logo/io-32.png",
+    "src": "io/images/logo/io-32.png",
     "type": "image/png",
     "sizes": "32x32"
   }, {
-    "src": "iogui/images/logo/io-72.png",
+    "src": "io/images/logo/io-72.png",
     "type": "image/png",
     "sizes": "72x72"
   }, {
-    "src": "iogui/images/logo/io-96.png",
+    "src": "io/images/logo/io-96.png",
     "type": "image/png",
     "sizes": "96x96"
   }, {
-    "src": "iogui/images/logo/io-128.png",
+    "src": "io/images/logo/io-128.png",
     "sizes": "128x128",
     "type": "image/png"
   }, {
-    "src": "iogui/images/logo/io-144.png",
+    "src": "io/images/logo/io-144.png",
     "sizes": "144x144",
     "type": "image/png"
   }, {
-    "src": "iogui/images/logo/io-152.png",
+    "src": "io/images/logo/io-152.png",
     "sizes": "152x152",
     "type": "image/png"
   }, {
-    "src": "iogui/images/logo/io-192.png",
+    "src": "io/images/logo/io-192.png",
     "sizes": "192x192",
     "type": "image/png"
   }, {
-    "src": "iogui/images/logo/io-384.png",
+    "src": "io/images/logo/io-384.png",
     "sizes": "384x384",
     "type": "image/png"
   }, {
-    "src": "iogui/images/logo/io-512.png",
+    "src": "io/images/logo/io-512.png",
     "sizes": "512x512",
     "type": "image/png"
   }]
