@@ -10,7 +10,7 @@
 			"path": "../three-ui"
 		},
 		{
-			"path": "../three.js-controls"
+			"path": "../three-controls"
 		},
 		{
 			"path": "../three.js"
@@ -21,16 +21,8 @@
 		"liveServer.settings.mount": [
 			["/iogui", "../iogui"], ["../iogui", "../iogui"],
 			["/three-ui", "../three-ui"], ["../three-ui", "../three-ui"],
-			["/three.js", "../three.js"], ["../three.js", "../three.js"],
-			["/three.js-controls", "../three.js-controls"], ["../three.js-controls", "../three.js-controls"]
-		],
-		"files.exclude": {
-			"LICENSE": true,
-			"robots.txt": true,
-			"favicon.ico": true,
-			"node_modules/": true,
-			"yarn.lock": true,
-			".*": true,
-		}
+			["/three-controls", "../three-controls"], ["../three-controls", "../three-controls"],
+			["/three.js", "../three.js"], ["../three.js", "../three.js"]
+		]
 	}
 }
